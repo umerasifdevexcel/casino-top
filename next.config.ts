@@ -23,6 +23,12 @@ const nextConfig: NextConfig = {
   // Vercel specific optimizations
   compress: true,
   poweredByHeader: false,
+  // Enable logging for debugging Sanity integration
+  logging: {
+    fetches: {
+      fullUrl: true,
+    },
+  },
 };
 
 export default nextConfig;

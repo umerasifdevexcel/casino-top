@@ -1,5 +1,7 @@
 'use client';
 
+import { Button } from '@/components/ui/button';
+
 export default function ComparisonTable() {
   const brands = [
     {
@@ -137,9 +139,9 @@ export default function ComparisonTable() {
                       </div>
                     </td>
                     <td className="p-4 border-b border-gray-100">
-                      <button className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white font-bold py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">
+                      <Button variant="casino" size="casino">
                         Play Now
-                      </button>
+                      </Button>
                     </td>
                   </tr>
                 ))}
@@ -218,9 +220,9 @@ export default function ComparisonTable() {
                     </div>
                   </div>
 
-                  <button className="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white font-bold py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-105">
+                  <Button variant="casino" size="casinoFull">
                     Play Now
-                  </button>
+                  </Button>
                 </div>
               </div>
             ))}
