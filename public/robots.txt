@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and API routes
+Disallow: /admin
+Disallow: /api/
+Disallow: /studio
+
+# Allow specific API routes that might be useful for SEO
+Allow: /api/revalidate
+
+# Sitemap location
+Sitemap: https://casinotop.com/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
