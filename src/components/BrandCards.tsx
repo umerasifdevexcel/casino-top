@@ -15,8 +15,8 @@ export default async function BrandCards() {
     return (
       <section className="w-full py-6">
         <div className="mb-8">
-          <h2 className="text-3xl font-bold text-black mb-4">Top Crypto Casinos 2025</h2>
-          <p className="text-gray-600 text-lg">
+          <h2 className="text-3xl font-bold text-black mb-4 text-center md:text-left">Top Crypto Casinos 2025</h2>
+          <p className="text-gray-600 text-lg text-center md:text-left">
             Our expert team has reviewed and ranked the best cryptocurrency casinos based on security, games, and user experience.
           </p>
         </div>
@@ -30,8 +30,8 @@ export default async function BrandCards() {
   return (
     <section className="w-full py-6">
       <div className="mb-8">
-        <h2 className="text-3xl font-bold text-black mb-4">Top Crypto Casinos 2025</h2>
-        <p className="text-gray-600 text-lg">
+        <h2 className="text-3xl font-bold text-black mb-4 text-center md:text-left">Top Crypto Casinos 2025</h2>
+        <p className="text-gray-600 text-lg text-center md:text-left">
           Our expert team has reviewed and ranked the best cryptocurrency casinos based on security, games, and user experience.
         </p>
       </div>
@@ -98,60 +98,58 @@ export default async function BrandCards() {
         ))}
       </div>
 
-      {/* Mobile Horizontal Scroll */}
+      {/* Mobile Vertical Layout */}
       <div className="lg:hidden">
-        <div className="overflow-x-auto pb-4">
-          <div className="flex gap-4" style={{ width: 'max-content' }}>
-            {brands.map((brand: CasinoBrand) => (
-              <div
-                key={brand._id}
-                className="bg-white rounded-xl border border-gray-200 shadow-sm p-4 min-w-[280px] max-w-[280px]"
-              >
-                {/* Header */}
-                <div className="text-center border-b border-gray-100 pb-3 mb-3">
-                  <div className="w-14 h-14 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center mx-auto mb-2 overflow-hidden">
-                    {brand.logo ? (
-                      <Image
-                        src={urlFor(brand.logo).width(56).height(56).url()}
-                        alt={`${brand.name} logo`}
-                        width={56}
-                        height={56}
-                        className="w-full h-full object-cover"
-                      />
-                    ) : (
-                      <span className="text-2xl">🎰</span>
-                    )}
-                  </div>
-                  <h3 className="font-bold text-lg text-black">{brand.name}</h3>
-                  {brand.rating && (
-                    <div className="flex items-center justify-center gap-1 mt-1">
-                      <span className="text-yellow-500">★</span>
-                      <span className="text-sm font-medium">{brand.rating}/5</span>
-                    </div>
+        <div className="grid grid-cols-1 gap-4">
+          {brands.map((brand: CasinoBrand) => (
+            <div
+              key={brand._id}
+              className="bg-white rounded-xl border border-gray-200 shadow-sm p-4"
+            >
+              {/* Header */}
+              <div className="text-center border-b border-gray-100 pb-3 mb-3">
+                <div className="w-14 h-14 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center mx-auto mb-2 overflow-hidden">
+                  {brand.logo ? (
+                    <Image
+                      src={urlFor(brand.logo).width(56).height(56).url()}
+                      alt={`${brand.name} logo`}
+                      width={56}
+                      height={56}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <span className="text-2xl">🎰</span>
                   )}
                 </div>
-
-                {/* Description */}
-                <div className="mb-4">
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {brand.description}
-                  </p>
-                </div>
-
-                {/* CTA Button */}
-                <Button 
-                  variant="casinoOutline" 
-                  size="default" 
-                  className="w-full rounded-lg"
-                  asChild
-                >
-                  <a href={brand.website} target="_blank" rel="noopener noreferrer">
-                    Visit Casino
-                  </a>
-                </Button>
+                <h3 className="font-bold text-lg text-black">{brand.name}</h3>
+                {brand.rating && (
+                  <div className="flex items-center justify-center gap-1 mt-1">
+                    <span className="text-yellow-500">★</span>
+                    <span className="text-sm font-medium">{brand.rating}/5</span>
+                  </div>
+                )}
               </div>
-            ))}
-          </div>
+
+              {/* Description */}
+              <div className="mb-4">
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {brand.description}
+                </p>
+              </div>
+
+              {/* CTA Button */}
+              <Button
+                variant="casinoOutline"
+                size="default"
+                className="w-full rounded-lg"
+                asChild
+              >
+                <a href={brand.website} target="_blank" rel="noopener noreferrer">
+                  Visit Casino
+                </a>
+              </Button>
+            </div>
+          ))}
         </div>
       </div>
     </section>

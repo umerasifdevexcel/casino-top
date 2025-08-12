@@ -3,9 +3,9 @@ import { Button } from '@/components/ui/button';
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-black overflow-hidden min-h-[500px] rounded-xl w-full">
+    <section className="relative bg-black overflow-hidden min-h-[500px] lg:rounded-xl w-full">
       {/* Background subtle pattern */}
-      <div className="absolute inset-0 rounded-xl">
+      <div className="absolute inset-0 lg:rounded-xl">
         <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: `
             radial-gradient(circle at 75% 45%, rgba(139, 69, 19, 0.15) 0%, transparent 50%),

@@ -21,7 +21,7 @@ const buttonVariants = cva(
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
         // Casino-specific variants
-        casino: "bg-[#FF3B30] hover:bg-[#E62E24] text-white rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-[#FF3B30]/25 font-bold",
+        casino: "bg-[#FF3B30] hover:bg-[#E62E24] text-white rounded-lg border border-transparent transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-[#FF3B30]/25 font-semibold text-sm leading-5 tracking-normal opacity-100",
         casinoOutline: "bg-white border border-red-600 text-red-600 hover:bg-red-600 hover:text-white transition-colors font-bold",
         headerSearch: "hover:bg-gray-100 rounded-full transition-colors",
       },
@@ -31,7 +31,7 @@ const buttonVariants = cva(
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
         icon: "size-9",
         // Casino-specific sizes
-        casino: "px-8 py-4 text-base leading-6",
+        casino: "h-9 px-4 py-2 gap-1",
         casinoFull: "w-full px-8 py-4 text-base leading-6",
         headerCta: "px-6 py-2 text-base leading-6",
         headerIcon: "p-2",

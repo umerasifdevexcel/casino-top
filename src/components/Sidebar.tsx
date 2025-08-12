@@ -31,8 +31,8 @@ export default function Sidebar() {
     <div className="w-88 bg-white/95 backdrop-blur-sm rounded-2xl p-5 border border-gray-100 sticky top-7 ml-6">
       <nav className="space-y-4">
         {/* Top Picks - Featured */}
-        <div className="">
-          <h3 
+        <div className="px-3">
+          <h3
             className="mb-0"
             style={headingStyle}
           >
