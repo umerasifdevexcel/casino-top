@@ -13,7 +13,7 @@ export default async function BrandCards() {
 
   if (brands.length === 0) {
     return (
-      <section className="w-full py-6">
+      <section className="w-full py-6 px-4 sm:px-0">
         <div className="mb-8">
           <h2 className="text-3xl font-bold text-black mb-4 text-center md:text-left">Top Crypto Casinos 2025</h2>
           <p className="text-gray-600 text-lg text-center md:text-left">
@@ -28,7 +28,7 @@ export default async function BrandCards() {
   }
 
   return (
-    <section className="w-full py-6">
+    <section className="w-full py-6 px-4 sm:px-0">
       <div className="mb-8">
         <h2 className="text-3xl font-bold text-black mb-4 text-center md:text-left">Top Crypto Casinos 2025</h2>
         <p className="text-gray-600 text-lg text-center md:text-left">
