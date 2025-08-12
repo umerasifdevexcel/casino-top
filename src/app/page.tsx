@@ -8,6 +8,18 @@ export const metadata: Metadata = {
   title: "Best Cryptocurrency Casino Reviews & Comparisons 2025",
   description: "Find the top-rated cryptocurrency casinos with our comprehensive reviews. Compare bonuses, games, security features, and user ratings to choose the perfect crypto casino for you.",
   keywords: ["cryptocurrency casino 2025", "best crypto casinos", "bitcoin casino reviews", "crypto gambling sites"],
+  openGraph: {
+    type: 'website',
+    title: 'Best Cryptocurrency Casino Reviews & Comparisons 2025',
+    description: 'Find the top-rated cryptocurrency casinos with our comprehensive reviews. Compare bonuses, games, security features, and user ratings to choose the perfect crypto casino for you.',
+    siteName: 'CasinoTop',
+    url: '/',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Best Cryptocurrency Casino Reviews & Comparisons 2025',
+    description: 'Find the top-rated cryptocurrency casinos with our comprehensive reviews. Compare bonuses, games, security features, and user ratings to choose the perfect crypto casino for you.',
+  },
 };
 
 export default function Home() {
