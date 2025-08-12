@@ -81,6 +81,65 @@ export default defineType({
       type: 'number',
       initialValue: 0,
     }),
+    // Comparison table specific fields
+    defineField({
+      name: 'gamesCount',
+      title: 'Number of Games',
+      type: 'string',
+      description: 'e.g., "3000+", "2500+"',
+    }),
+    defineField({
+      name: 'withdrawalTime',
+      title: 'Withdrawal Time',
+      type: 'string',
+      description: 'e.g., "Instant", "< 1 hour", "< 30 min"',
+    }),
+    defineField({
+      name: 'minDeposit',
+      title: 'Minimum Deposit',
+      type: 'string',
+      description: 'e.g., "$20", "$10", "$1"',
+    }),
+    defineField({
+      name: 'license',
+      title: 'License',
+      type: 'string',
+      description: 'e.g., "Curacao", "Malta", "UK"',
+    }),
+    defineField({
+      name: 'supportedCryptos',
+      title: 'Supported Cryptocurrencies',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: {
+        layout: 'tags',
+      },
+      description: 'e.g., BTC, ETH, LTC, DOGE',
+    }),
+    defineField({
+      name: 'hasLiveChat',
+      title: 'Live Chat Support',
+      type: 'boolean',
+      initialValue: false,
+    }),
+    defineField({
+      name: 'hasMobileApp',
+      title: 'Mobile App Available',
+      type: 'boolean',
+      initialValue: false,
+    }),
+    defineField({
+      name: 'fairnessType',
+      title: 'Fairness Type',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Provably Fair', value: 'Provably Fair' },
+          { title: 'RNG Certified', value: 'RNG Certified' },
+          { title: 'Third Party', value: 'Third Party' },
+        ],
+      },
+    }),
   ],
   preview: {
     select: {

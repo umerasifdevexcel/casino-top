@@ -13,6 +13,15 @@ export interface CasinoBrand {
   website?: string
   isActive: boolean
   order: number
+  // Comparison table fields
+  gamesCount?: string
+  withdrawalTime?: string
+  minDeposit?: string
+  license?: string
+  supportedCryptos?: string[]
+  hasLiveChat?: boolean
+  hasMobileApp?: boolean
+  fairnessType?: string
 }
 
 export interface Post {

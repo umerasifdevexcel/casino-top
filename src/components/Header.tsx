@@ -78,6 +78,10 @@ export default function Header() {
             Compare
           </a>
 
+          <a href="#" className="text-black hover:text-gray-700 transition-colors font-medium">
+            Expert Guides
+          </a>
+
           <div className="relative" ref={exploreRef}>
             <button
               onClick={() => setIsExploreOpen(!isExploreOpen)}
@@ -96,10 +100,6 @@ export default function Header() {
               </div>
             )}
           </div>
-
-          <a href="#" className="text-black hover:text-gray-700 transition-colors font-medium">
-            Expert Guides
-          </a>
         </nav>
 
         {/* Right Side */}
@@ -107,7 +107,7 @@ export default function Header() {
           {/* Admin Link */}
           <Link 
             href="/admin" 
-            className="p-2 hover:bg-gray-100 rounded-full transition-colors text-gray-600 hover:text-gray-800"
+            className="p-2 hover:bg-gray-100 rounded-full transition-colors text-gray-600 hover:text-gray-800 lg:hidden"
             title="Admin Dashboard"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -173,34 +173,154 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden mt-4 pb-4 border-t border-gray-100">
-          <nav className="flex flex-col space-y-4 pt-4">
-            <a href="#" className="text-black hover:text-gray-700 transition-colors font-medium px-4 py-2">
-              Top Picks
-            </a>
-            <a href="#" className="text-black hover:text-gray-700 transition-colors font-medium px-4 py-2">
-              Casino Reviews
-            </a>
-            <a href="#" className="text-black hover:text-gray-700 transition-colors font-medium px-4 py-2">
-              Compare
-            </a>
-            <a href="#" className="text-black hover:text-gray-700 transition-colors font-medium px-4 py-2">
-              Explore
-            </a>
-            <a href="#" className="text-black hover:text-gray-700 transition-colors font-medium px-4 py-2">
-              Expert Guides
-            </a>
-            <Link href="/admin" className="text-black hover:text-gray-700 transition-colors font-medium px-4 py-2">
-              Admin
-            </Link>
-            <div className="pt-4 border-t border-gray-100">
-              <Button variant="casinoOutline" size="headerCta" className="w-full rounded-lg">
-                See Top Casinos
-              </Button>
+        <div className="fixed inset-0 bg-white z-50 lg:hidden">
+          <div className="flex flex-col h-full">
+            {/* Header */}
+            <div className="flex items-center justify-between p-6 border-b border-gray-100">
+              <div className="flex items-center gap-3">
+                <Image
+                  src="/images/logo.svg"
+                  alt="CasinoTop Logo"
+                  width={32}
+                  height={32}
+                  className="w-8 h-8"
+                />
+                <span className="text-xl font-bold text-black">CasinoTop</span>
+              </div>
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+              >
+                <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
             </div>
-          </nav>
+
+            {/* Content */}
+            <div className="flex-1 overflow-y-auto p-6">
+              {/* Quick Access */}
+              <div className="mb-8">
+                <h3 className="text-base font-normal text-gray-500 uppercase mb-4" style={{
+                  fontSize: '16px',
+                  lineHeight: '24px',
+                  letterSpacing: '0px'
+                }}>Quick Access</h3>
+                <div className="grid grid-cols-3 gap-4">
+                  <a href="#" className="flex flex-col items-center justify-center w-[130.67px] h-[116px] py-5 px-4 border border-[#E5E7E8] rounded-md hover:border-gray-300 transition-colors">
+                    <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mb-3">
+                      <svg className="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.286 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.286-3.957a1 1 0 00-.364-1.118L2.049 8.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/>
+                      </svg>
+                    </div>
+                    <span className="text-sm font-medium text-gray-900">Top Picks</span>
+                  </a>
+
+                  <a href="#" className="flex flex-col items-center justify-center w-[130.67px] h-[116px] py-5 px-4 border border-[#E5E7E8] rounded-md hover:border-gray-300 transition-colors">
+                    <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mb-3">
+                      <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
+                      </svg>
+                    </div>
+                    <span className="text-sm font-medium text-gray-900">Compare</span>
+                  </a>
+
+                  <a href="#" className="flex flex-col items-center justify-center w-[130.67px] h-[116px] py-5 px-4 border border-[#E5E7E8] rounded-md hover:border-gray-300 transition-colors">
+                    <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mb-3">
+                      <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                      </svg>
+                    </div>
+                    <span className="text-sm font-medium text-gray-900">Ask AI</span>
+                  </a>
+
+                  <a href="#" className="flex flex-col items-center justify-center w-[130.67px] h-[116px] py-5 px-4 border border-[#E5E7E8] rounded-md hover:border-gray-300 transition-colors">
+                    <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mb-3">
+                      <div className="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">NEW</div>
+                    </div>
+                    <span className="text-sm font-medium text-gray-900">New Casinos</span>
+                  </a>
+
+                  <a href="#" className="flex flex-col items-center justify-center w-[130.67px] h-[116px] py-5 px-4 border border-[#E5E7E8] rounded-md hover:border-gray-300 transition-colors">
+                    <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mb-3">
+                      <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      </svg>
+                    </div>
+                    <span className="text-sm font-medium text-gray-900">Legal States</span>
+                  </a>
+
+                  <a href="#" className="flex flex-col items-center justify-center w-[130.67px] h-[116px] py-5 px-4 border border-[#E5E7E8] rounded-md hover:border-gray-300 transition-colors">
+                    <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mb-3">
+                      <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                      </svg>
+                    </div>
+                    <span className="text-sm font-medium text-gray-900">News</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Navigation */}
+              <div className="mb-8">
+                <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-4">Navigation</h3>
+                <div className="space-y-1">
+                  <a href="#" className="flex items-center justify-between py-4 hover:bg-gray-50 rounded-lg transition-colors">
+                    <span className="text-base font-medium text-gray-900">Casino Reviews</span>
+                    <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                  <a href="#" className="flex items-center justify-between py-4 hover:bg-gray-50 rounded-lg transition-colors">
+                    <span className="text-base font-medium text-gray-900">Expert Guides</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Explore */}
+              <div className="mb-8">
+                <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-4">Explore</h3>
+                <div className="space-y-1">
+                  <a href="#" className="block py-4 hover:bg-gray-50 rounded-lg transition-colors">
+                    <span className="text-base font-medium text-gray-900">About Us</span>
+                  </a>
+                  <a href="#" className="block  py-4 hover:bg-gray-50 rounded-lg transition-colors">
+                    <span className="text-base font-medium text-gray-900">Editorial Policy</span>
+                  </a>
+                  <a href="#" className="block  py-4 hover:bg-gray-50 rounded-lg transition-colors">
+                    <span className="text-base font-medium text-gray-900">Contact</span>
+                  </a>
+                  <a href="#" className="block  py-4 hover:bg-gray-50 rounded-lg transition-colors">
+                    <span className="text-base font-medium text-gray-900">Disclaimer</span>
+                  </a>
+                  <a href="#" className="block  py-4 hover:bg-gray-50 rounded-lg transition-colors">
+                    <span className="text-base font-medium text-gray-900">Responsible Gaming</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Settings */}
+              <div className="mb-8">
+                <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-4">Settings</h3>
+                <div className="space-y-1">
+                  <a href="#" className="flex items-center justify-between py-4 hover:bg-gray-50 rounded-lg transition-colors">
+                    <div className="flex items-center gap-3">
+                      <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                      </svg>
+                      <span className="text-base font-medium text-gray-900">Country & Language</span>
+                    </div>
+                    <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </header>

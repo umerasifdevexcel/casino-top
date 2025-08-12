@@ -63,3 +63,27 @@ export const topRatedCasinoBrandsQuery = defineQuery(`
     website
   }
 `)
+
+// Query to get casino brands for comparison table
+export const comparisonTableQuery = defineQuery(`
+  *[_type == "casinoBrand" && isActive == true] | order(order asc, name asc) {
+    _id,
+    name,
+    logo,
+    description,
+    rating,
+    bonus,
+    features,
+    pros,
+    cons,
+    website,
+    gamesCount,
+    withdrawalTime,
+    minDeposit,
+    license,
+    supportedCryptos,
+    hasLiveChat,
+    hasMobileApp,
+    fairnessType
+  }
+`)

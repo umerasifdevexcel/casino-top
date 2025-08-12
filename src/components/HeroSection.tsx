@@ -18,12 +18,24 @@ export default function HeroSection() {
       </div>
 
       <div className="relative z-10 w-full h-full p-8 lg:p-12">
-        <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
           
-          {/* Left Side Content */}
-          <div className="space-y-6">
+          {/* Right Side - Background Image (shown first on mobile) */}
+          <div className="relative flex justify-center items-center h-full min-h-[300px] lg:min-h-[400px] order-1 lg:order-2">
+            <Image
+              src="/images/bg.png"
+              alt="Cryptocurrency solar system background"
+              width={400}
+              height={400}
+              className="w-full h-auto max-w-[350px] lg:max-w-[400px] max-h-[350px] lg:max-h-[400px] object-contain"
+              priority
+            />
+          </div>
+          
+          {/* Left Side Content (shown second on mobile) */}
+          <div className="space-y-6 order-2 lg:order-1">
             {/* Main Heading */}
-            <h1 className="text-white" style={{
+            <h1 className="text-white text-center lg:text-left" style={{
               fontWeight: 700,
               fontStyle: 'normal',
               fontSize: '32px',
@@ -35,7 +47,7 @@ export default function HeroSection() {
             </h1>
             
             {/* Description */}
-            <p className="text-white/90 text-justify" style={{ 
+            <p className="text-white/90 text-center lg:text-justify mx-auto lg:mx-0" style={{
               maxWidth: '460px',
               fontWeight: 500,
               fontStyle: 'normal',
@@ -47,7 +59,7 @@ export default function HeroSection() {
             </p>
             
             {/* Review Date */}
-            <p className="text-white/70" style={{
+            <p className="text-white/70 text-center lg:text-left" style={{
               fontWeight: 400,
               fontStyle: 'italic',
               fontSize: '14px',
@@ -58,12 +70,14 @@ export default function HeroSection() {
             </p>
             
             {/* CTA Button */}
-            <Button variant="casino" size="casino" className="text-center">
-              Compare All Crypto Casinos
-            </Button>
+            <div className="flex justify-center lg:justify-start">
+              <Button variant="casino" size="casino" className="text-center w-full lg:w-auto">
+                Compare All Crypto Casinos
+              </Button>
+            </div>
             
             {/* Bottom Logos */}
-            <div className="flex items-center gap-4 ">
+            <div className="flex items-center justify-center lg:justify-start gap-4">
               {/* Gambling Responsibility Block */}
               <div className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
                 <Image
@@ -75,18 +89,6 @@ export default function HeroSection() {
                 />
               </div>
             </div>
-          </div>
-          
-          {/* Right Side - Background Image */}
-          <div className="relative flex justify-center items-center h-full min-h-[400px]">
-            <Image
-              src="/images/bg.png"
-              alt="Cryptocurrency solar system background"
-              width={400}
-              height={400}
-              className="w-full h-auto max-w-[400px] max-h-[400px] object-contain"
-              priority
-            />
           </div>
         </div>
       </div>

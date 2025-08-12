@@ -29,6 +29,15 @@ const sampleBrands = [
     website: 'https://www.bitstarz.com',
     isActive: true,
     order: 1,
+    // Comparison table data
+    gamesCount: '3000+',
+    withdrawalTime: 'Instant',
+    minDeposit: '$20',
+    license: 'Curacao',
+    supportedCryptos: ['BTC', 'ETH', 'LTC', 'BCH'],
+    hasLiveChat: true,
+    hasMobileApp: true,
+    fairnessType: 'Provably Fair',
   },
   {
     _type: 'casinoBrand',
@@ -42,6 +51,15 @@ const sampleBrands = [
     website: 'https://www.fortunejack.com',
     isActive: true,
     order: 2,
+    // Comparison table data
+    gamesCount: '2500+',
+    withdrawalTime: '< 1 hour',
+    minDeposit: '$10',
+    license: 'Curacao',
+    supportedCryptos: ['BTC', 'ETH', 'LTC', 'DOGE'],
+    hasLiveChat: true,
+    hasMobileApp: true,
+    fairnessType: 'Provably Fair',
   },
   {
     _type: 'casinoBrand',
@@ -55,6 +73,15 @@ const sampleBrands = [
     website: 'https://www.mbitcasino.com',
     isActive: true,
     order: 3,
+    // Comparison table data
+    gamesCount: '2000+',
+    withdrawalTime: '< 30 min',
+    minDeposit: '$20',
+    license: 'Curacao',
+    supportedCryptos: ['BTC', 'ETH', 'LTC', 'BCH'],
+    hasLiveChat: true,
+    hasMobileApp: true,
+    fairnessType: 'RNG Certified',
   },
   {
     _type: 'casinoBrand',
@@ -68,6 +95,15 @@ const sampleBrands = [
     website: 'https://www.cloudbet.com',
     isActive: true,
     order: 4,
+    // Comparison table data
+    gamesCount: '1500+',
+    withdrawalTime: '< 2 hours',
+    minDeposit: '$10',
+    license: 'Curacao',
+    supportedCryptos: ['BTC', 'ETH', 'BCH', 'USDT'],
+    hasLiveChat: false,
+    hasMobileApp: true,
+    fairnessType: 'Third Party',
   },
   {
     _type: 'casinoBrand',
@@ -81,6 +117,15 @@ const sampleBrands = [
     website: 'https://www.stake.com',
     isActive: true,
     order: 5,
+    // Comparison table data
+    gamesCount: '4000+',
+    withdrawalTime: 'Instant',
+    minDeposit: '$1',
+    license: 'Curacao',
+    supportedCryptos: ['BTC', 'ETH', 'LTC', 'DOGE', 'TRX'],
+    hasLiveChat: true,
+    hasMobileApp: true,
+    fairnessType: 'Provably Fair',
   },
   {
     _type: 'casinoBrand',
@@ -94,6 +139,15 @@ const sampleBrands = [
     website: 'https://www.bc.game',
     isActive: true,
     order: 6,
+    // Comparison table data
+    gamesCount: '3500+',
+    withdrawalTime: '< 15 min',
+    minDeposit: '$1',
+    license: 'Curacao',
+    supportedCryptos: ['BTC', 'ETH', 'BNB', 'ADA'],
+    hasLiveChat: true,
+    hasMobileApp: true,
+    fairnessType: 'Provably Fair',
   },
 ]
 

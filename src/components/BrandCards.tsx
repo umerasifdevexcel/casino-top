@@ -39,7 +39,9 @@ export default function BrandCards() {
             Our expert team has reviewed and ranked the best cryptocurrency casinos based on security, games, and user experience.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+
+        {/* Desktop Loading Grid */}
+        <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {[...Array(6)].map((_, i) => (
             <div key={i} className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden animate-pulse">
               <div className="p-4 text-center border-b border-gray-100">
@@ -55,6 +57,27 @@ export default function BrandCards() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Mobile Loading Cards */}
+        <div className="lg:hidden">
+          <div className="overflow-x-auto pb-4">
+            <div className="flex gap-4" style={{ width: 'max-content' }}>
+              {[...Array(6)].map((_, i) => (
+                <div key={i} className="bg-white rounded-xl border border-gray-200 shadow-sm p-4 min-w-[280px] max-w-[280px] animate-pulse">
+                  <div className="text-center border-b border-gray-100 pb-3 mb-3">
+                    <div className="w-14 h-14 bg-gray-200 rounded-lg mx-auto mb-2"></div>
+                    <div className="h-6 bg-gray-200 rounded w-24 mx-auto"></div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="h-4 bg-gray-200 rounded"></div>
+                    <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+                    <div className="h-12 bg-gray-200 rounded"></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     )
@@ -85,7 +108,8 @@ export default function BrandCards() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+      {/* Desktop Grid View */}
+      <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
         {brands.map((brand) => (
           <div
             key={brand._id}
@@ -212,6 +236,146 @@ export default function BrandCards() {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Mobile Card View with Horizontal Scroll */}
+      <div className="lg:hidden">
+        <div className="overflow-x-auto pb-4">
+          <div className="flex gap-4" style={{ width: 'max-content' }}>
+            {brands.map((brand) => (
+              <div
+                key={brand._id}
+                className="bg-white rounded-xl border border-gray-200 shadow-sm p-4 min-w-[280px] max-w-[280px] flex flex-col h-full"
+              >
+                {/* Header */}
+                <div className="text-center border-b border-gray-100 pb-3 mb-3 flex-shrink-0">
+                  <div className="w-14 h-14 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center mx-auto mb-2 overflow-hidden">
+                    {brand.logo ? (
+                      <Image
+                        src={urlFor(brand.logo).width(56).height(56).url()}
+                        alt={`${brand.name} logo`}
+                        width={56}
+                        height={56}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <span className="text-2xl">🎰</span>
+                    )}
+                  </div>
+                  <h3 className="font-bold text-lg text-black" style={{
+                    fontWeight: 700,
+                    fontStyle: 'normal',
+                    fontSize: '20px',
+                    lineHeight: '28px',
+                    letterSpacing: '0px',
+                    verticalAlign: 'middle'
+                  }}>{brand.name}</h3>
+                  {brand.rating && (
+                    <div className="flex items-center justify-center gap-1 mt-1">
+                      <span className="text-yellow-500">★</span>
+                      <span className="text-sm font-medium">{brand.rating}/5</span>
+                    </div>
+                  )}
+                </div>
+
+                {/* Content Area - Flexible */}
+                <div className="flex-1 flex flex-col">
+                  {/* Pros and Cons */}
+                  <div className="space-y-3 mb-3 flex-1">
+                    {brand.pros && brand.pros.length > 0 && (
+                      <div>
+                        <h4 className="font-semibold text-green-700 mb-1 flex items-center gap-1 text-sm">
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          Pros
+                        </h4>
+                        <ul className="space-y-0.5">
+                          {brand.pros.slice(0, 2).map((pro, i) => (
+                            <li key={i} className="text-xs text-gray-600 flex items-start gap-2" style={{
+                              fontWeight: 400,
+                              fontStyle: 'normal',
+                              fontSize: '12px',
+                              lineHeight: '18px',
+                              letterSpacing: '0%',
+                              verticalAlign: 'middle'
+                            }}>
+                              <span className="text-green-500 mt-0.5">•</span>
+                              {pro}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {brand.cons && brand.cons.length > 0 && (
+                      <div>
+                        <h4 className="font-semibold text-red-700 mb-1 flex items-center gap-1 text-sm">
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                          Cons
+                        </h4>
+                        <ul className="space-y-0.5">
+                          {brand.cons.slice(0, 1).map((con, i) => (
+                            <li key={i} className="text-xs text-gray-600 flex items-start gap-2" style={{
+                              fontWeight: 400,
+                              fontStyle: 'normal',
+                              fontSize: '12px',
+                              lineHeight: '18px',
+                              letterSpacing: '0%',
+                              verticalAlign: 'middle'
+                            }}>
+                              <span className="text-red-500 mt-0.5">•</span>
+                              {con}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {/* Show placeholder content if no pros/cons */}
+                    {(!brand.pros || brand.pros.length === 0) && (!brand.cons || brand.cons.length === 0) && (
+                      <div className="text-center py-2">
+                        <p className="text-gray-400 text-xs">Features coming soon</p>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Description - Truncated for mobile */}
+                  {brand.description && (
+                    <div className="mb-3 flex-shrink-0">
+                      <p className="text-gray-700 text-xs leading-relaxed italic line-clamp-2">
+                        "{brand.description}"
+                      </p>
+                    </div>
+                  )}
+                </div>
+
+                {/* CTA Button - Always at bottom */}
+                <div className="flex-shrink-0">
+                  <Button
+                    variant="casino"
+                    size="casinoFull"
+                    onClick={() => {
+                      if (brand.website) {
+                        window.open(brand.website, '_blank', 'noopener,noreferrer')
+                      }
+                    }}
+                    className="w-full"
+                  >
+                    {brand.website ? 'Visit Site' : 'Learn More'}
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="text-center text-gray-500 text-sm mt-2">
+          ← Swipe to see more casinos →
+        </div>
       </div>
     </section>
   );
