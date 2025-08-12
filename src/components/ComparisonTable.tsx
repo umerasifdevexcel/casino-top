@@ -17,7 +17,7 @@ export default async function ComparisonTable() {
   });
 
   return (
-    <section className="w-full py-6">
+    <section className="w-full py-6 ">
       <div className="mb-8">
         <h2 className="text-3xl font-bold text-black mb-4 text-center md:text-left">Crypto Casino Comparison</h2>
         <p className="text-gray-600 text-lg text-center md:text-left">
