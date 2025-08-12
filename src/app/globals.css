@@ -130,3 +130,9 @@
     cursor: not-allowed;
   }
 }
+
+/* Custom sidebar navigation link hover effect */
+.custom-link-hover:hover {
+  color: #FF3B30 !important;
+  text-underline-offset: 3px;
+}
